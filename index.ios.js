@@ -15,11 +15,13 @@ import {
 
 var ImageDemo = require('./ImageDemo');
 var QQImageDemo = require('./QQImageDemo');
+var LoginView = require('./loginView');
+var JScrollViewDemo = require('./JScrollViewDemo');
+var FScrollViewDemo = require('./FScrollViewDemo');
 class BViewDemo extends Component {
   render() {
     return (
-     // <ImageDemo />
-     <QQImageDemo />
+        <JScrollViewDemo/>
     );
   }
 }

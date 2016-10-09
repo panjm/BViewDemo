@@ -14,6 +14,14 @@ import {
   TextInput,
 } from 'react-native';
 
+// 获取屏幕的宽度
+var Dimensions = require('Dimensions');
+var {width, height} = Dimensions.get('window');
+
+var textInputX = width - 20;
+
+
+
 class QQImageDemo extends Component {
   render() {
     return (
@@ -26,15 +34,15 @@ class QQImageDemo extends Component {
               登录
             </Text>
           </View>
-          <View>
+          <View style={styles.settingStyle}>
             <Text>无法登录</Text>
             <Text>忘记密码</Text>
           </View>
-          <View>
+          <View style={styles.otherLoginStyle}>
             <Text>其他登录方式:</Text>
-            <Image source={require('./img/icon3.png')}  style={{width:100,height:100}}/>
-            <Image source={require('./img/icon7.png')}  style={{width:100,height:100}}/>
-            <Image source={require('./img/icon8.png')}  style={{width:100,height:100}}/>
+            <Image source={require('./img/icon3.png')}  style={styles.otherImageStyle}/>
+            <Image source={require('./img/icon7.png')}  style={styles.otherImageStyle}/>
+            <Image source={require('./img/icon8.png')}  style={styles.otherImageStyle}/>
           </View>
         </View>
     );
@@ -43,7 +51,7 @@ class QQImageDemo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
+    flex:1,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
@@ -54,16 +62,17 @@ const styles = StyleSheet.create({
     marginTop:50,
   },
   textInputStyle: {
-    borderWidth:1,
     borderColor:'gray',
     height:30,
-    width:356,
+    width:textInputX,
     marginLeft:10,
     marginTop:10,
+    backgroundColor:'white',
+    textAlign:'center'
   },
   loginStyle:{
     height:35,
-    width:356,
+    width:textInputX,
     backgroundColor:'#44c1ef',
     justifyContent: 'center',
     alignItems: 'center',
@@ -73,9 +82,29 @@ const styles = StyleSheet.create({
   loginTextStyle:{
     color:'white',
     fontSize:16,
-  }
-  
+  },
+  settingStyle: {
+    // 设置主轴的方向
+    flexDirection:'row',
+    // 设置主轴的对齐方式
+    width:width*0.9,
+    justifyContent:'space-between',
 
+  },
+  otherLoginStyle: {
+    flexDirection:'row',
+    alignItems:'center',
+    // 绝对定位
+    position:'absolute',
+    bottom:10,
+    left:10,
+  },
+  otherImageStyle:{
+    width:50,
+    height:50,
+    borderRadius:25,
+    marginLeft:8
+  }
 });
 
 module.exports = QQImageDemo;
