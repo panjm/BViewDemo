@@ -18,11 +18,19 @@ var QQImageDemo = require('./QQImageDemo');
 var LoginView = require('./loginView');
 var JScrollViewDemo = require('./JScrollViewDemo');
 var FScrollViewDemo = require('./FScrollViewDemo');
+var GListViewDemo = require('./GListViewDemo');
+var HListViewDemo = require('./HListViewDemo');
+var AListViewDemo = require('./AListViewDemo');
+var CListViewDemo = require('./CListViewDemo');
+var EListViewDemo = require('./EListViewDemo');
+
+
 class BViewDemo extends Component {
   render() {
     return (
-        <JScrollViewDemo/>
-    );
+        // <EListViewDemo/>
+        <CListViewDemo/>
+      );
   }
 }
 AppRegistry.registerComponent('BViewDemo', () => BViewDemo);
